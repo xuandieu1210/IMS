@@ -17,9 +17,9 @@ class FiledinhkemController extends Controller
      */
     public function index(Request $request)
     {
-        $filedinhkem, = Models\FileDinhKem::latest()->paginate(25);
+        $filedinhkem = Models\FileDinhKem::latest()->paginate(25);
 
-        return $filedinhkem,;
+        return $filedinhkem;
     }
 
     /**
@@ -32,9 +32,9 @@ class FiledinhkemController extends Controller
     public function store(Request $request)
     {
         
-        $filedinhkem, = Models\FileDinhKem::create($request->all());
+        $filedinhkem = Models\FileDinhKem::create($request->all());
 
-        return response()->json($filedinhkem,, 201);
+        return response()->json($filedinhkem, 201);
     }
 
     /**
@@ -46,9 +46,9 @@ class FiledinhkemController extends Controller
      */
     public function show($id)
     {
-        $filedinhkem, = Models\FileDinhKem::findOrFail($id);
+        $filedinhkem = Models\FileDinhKem::findOrFail($id);
 
-        return $filedinhkem,;
+        return $filedinhkem;
     }
 
     /**
@@ -62,10 +62,10 @@ class FiledinhkemController extends Controller
     public function update(Request $request, $id)
     {
         
-        $filedinhkem, = Models\FileDinhKem::findOrFail($id);
-        $filedinhkem,->update($request->all());
+        $filedinhkem = Models\FileDinhKem::findOrFail($id);
+        $filedinhkem->update($request->all());
 
-        return response()->json($filedinhkem,, 200);
+        return response()->json($filedinhkem, 200);
     }
 
     /**

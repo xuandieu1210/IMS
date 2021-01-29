@@ -17,9 +17,9 @@ class HoidongmauController extends Controller
      */
     public function index(Request $request)
     {
-        $hoidongmau, = Models\HoiDongMau::latest()->paginate(25);
+        $hoidongmau = Models\HoiDongMau::latest()->paginate(25);
 
-        return $hoidongmau,;
+        return $hoidongmau;
     }
 
     /**
@@ -32,9 +32,9 @@ class HoidongmauController extends Controller
     public function store(Request $request)
     {
         
-        $hoidongmau, = Models\HoiDongMau::create($request->all());
+        $hoidongmau = Models\HoiDongMau::create($request->all());
 
-        return response()->json($hoidongmau,, 201);
+        return response()->json($hoidongmau, 201);
     }
 
     /**
@@ -46,9 +46,9 @@ class HoidongmauController extends Controller
      */
     public function show($id)
     {
-        $hoidongmau, = Models\HoiDongMau::findOrFail($id);
+        $hoidongmau = Models\HoiDongMau::findOrFail($id);
 
-        return $hoidongmau,;
+        return $hoidongmau;
     }
 
     /**
@@ -62,10 +62,10 @@ class HoidongmauController extends Controller
     public function update(Request $request, $id)
     {
         
-        $hoidongmau, = Models\HoiDongMau::findOrFail($id);
-        $hoidongmau,->update($request->all());
+        $hoidongmau = Models\HoiDongMau::findOrFail($id);
+        $hoidongmau->update($request->all());
 
-        return response()->json($hoidongmau,, 200);
+        return response()->json($hoidongmau, 200);
     }
 
     /**

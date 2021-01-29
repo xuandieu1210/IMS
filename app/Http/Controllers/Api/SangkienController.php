@@ -17,9 +17,9 @@ class SangkienController extends Controller
      */
     public function index(Request $request)
     {
-        $sangkien, = Models\SangKien::latest()->paginate(25);
+        $sangkien = Models\SangKien::latest()->paginate(25);
 
-        return $sangkien,;
+        return $sangkien;
     }
 
     /**
@@ -32,9 +32,9 @@ class SangkienController extends Controller
     public function store(Request $request)
     {
         
-        $sangkien, = Models\SangKien::create($request->all());
+        $sangkien = Models\SangKien::create($request->all());
 
-        return response()->json($sangkien,, 201);
+        return response()->json($sangkien, 201);
     }
 
     /**
@@ -46,9 +46,9 @@ class SangkienController extends Controller
      */
     public function show($id)
     {
-        $sangkien, = Models\SangKien::findOrFail($id);
+        $sangkien = Models\SangKien::findOrFail($id);
 
-        return $sangkien,;
+        return $sangkien;
     }
 
     /**
@@ -62,10 +62,10 @@ class SangkienController extends Controller
     public function update(Request $request, $id)
     {
         
-        $sangkien, = Models\SangKien::findOrFail($id);
-        $sangkien,->update($request->all());
+        $sangkien = Models\SangKien::findOrFail($id);
+        $sangkien->update($request->all());
 
-        return response()->json($sangkien,, 200);
+        return response()->json($sangkien, 200);
     }
 
     /**

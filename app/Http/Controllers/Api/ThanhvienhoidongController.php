@@ -17,9 +17,9 @@ class ThanhvienhoidongController extends Controller
      */
     public function index(Request $request)
     {
-        $thanhvienhoidong, = Models\ThanhVienHoiDong::latest()->paginate(25);
+        $thanhvienhoidong = Models\ThanhVienHoiDong::latest()->paginate(25);
 
-        return $thanhvienhoidong,;
+        return $thanhvienhoidong;
     }
 
     /**
@@ -32,9 +32,9 @@ class ThanhvienhoidongController extends Controller
     public function store(Request $request)
     {
         
-        $thanhvienhoidong, = Models\ThanhVienHoiDong::create($request->all());
+        $thanhvienhoidong = Models\ThanhVienHoiDong::create($request->all());
 
-        return response()->json($thanhvienhoidong,, 201);
+        return response()->json($thanhvienhoidong, 201);
     }
 
     /**
@@ -46,9 +46,9 @@ class ThanhvienhoidongController extends Controller
      */
     public function show($id)
     {
-        $thanhvienhoidong, = Models\ThanhVienHoiDong::findOrFail($id);
+        $thanhvienhoidong = Models\ThanhVienHoiDong::findOrFail($id);
 
-        return $thanhvienhoidong,;
+        return $thanhvienhoidong;
     }
 
     /**
@@ -62,10 +62,10 @@ class ThanhvienhoidongController extends Controller
     public function update(Request $request, $id)
     {
         
-        $thanhvienhoidong, = Models\ThanhVienHoiDong::findOrFail($id);
-        $thanhvienhoidong,->update($request->all());
+        $thanhvienhoidong = Models\ThanhVienHoiDong::findOrFail($id);
+        $thanhvienhoidong->update($request->all());
 
-        return response()->json($thanhvienhoidong,, 200);
+        return response()->json($thanhvienhoidong, 200);
     }
 
     /**

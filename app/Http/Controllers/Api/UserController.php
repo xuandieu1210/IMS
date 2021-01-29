@@ -17,9 +17,9 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $user, = Models\User::latest()->paginate(25);
+        $user = Models\User::latest()->paginate(25);
 
-        return $user,;
+        return $user;
     }
 
     /**
@@ -32,9 +32,9 @@ class UserController extends Controller
     public function store(Request $request)
     {
         
-        $user, = Models\User::create($request->all());
+        $user = Models\User::create($request->all());
 
-        return response()->json($user,, 201);
+        return response()->json($user, 201);
     }
 
     /**
@@ -46,9 +46,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user, = Models\User::findOrFail($id);
+        $user = Models\User::findOrFail($id);
 
-        return $user,;
+        return $user;
     }
 
     /**
@@ -62,10 +62,10 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         
-        $user, = Models\User::findOrFail($id);
-        $user,->update($request->all());
+        $user = Models\User::findOrFail($id);
+        $user->update($request->all());
 
-        return response()->json($user,, 200);
+        return response()->json($user, 200);
     }
 
     /**

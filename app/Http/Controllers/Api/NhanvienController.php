@@ -17,9 +17,9 @@ class NhanvienController extends Controller
      */
     public function index(Request $request)
     {
-        $nhanvien, = Models\NhanVien::latest()->paginate(25);
+        $nhanvien = Models\NhanVien::latest()->paginate(25);
 
-        return $nhanvien,;
+        return $nhanvien;
     }
 
     /**
@@ -32,9 +32,9 @@ class NhanvienController extends Controller
     public function store(Request $request)
     {
         
-        $nhanvien, = Models\NhanVien::create($request->all());
+        $nhanvien = Models\NhanVien::create($request->all());
 
-        return response()->json($nhanvien,, 201);
+        return response()->json($nhanvien, 201);
     }
 
     /**
@@ -46,9 +46,9 @@ class NhanvienController extends Controller
      */
     public function show($id)
     {
-        $nhanvien, = Models\NhanVien::findOrFail($id);
+        $nhanvien = Models\NhanVien::findOrFail($id);
 
-        return $nhanvien,;
+        return $nhanvien;
     }
 
     /**
@@ -62,10 +62,10 @@ class NhanvienController extends Controller
     public function update(Request $request, $id)
     {
         
-        $nhanvien, = Models\NhanVien::findOrFail($id);
-        $nhanvien,->update($request->all());
+        $nhanvien = Models\NhanVien::findOrFail($id);
+        $nhanvien->update($request->all());
 
-        return response()->json($nhanvien,, 200);
+        return response()->json($nhanvien, 200);
     }
 
     /**

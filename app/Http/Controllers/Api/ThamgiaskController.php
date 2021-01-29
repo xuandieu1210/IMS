@@ -17,9 +17,9 @@ class ThamgiaskController extends Controller
      */
     public function index(Request $request)
     {
-        $thamgiask, = Models\ThamGiaSk::latest()->paginate(25);
+        $thamgiask = Models\ThamGiaSk::latest()->paginate(25);
 
-        return $thamgiask,;
+        return $thamgiask;
     }
 
     /**
@@ -32,9 +32,9 @@ class ThamgiaskController extends Controller
     public function store(Request $request)
     {
         
-        $thamgiask, = Models\ThamGiaSk::create($request->all());
+        $thamgiask = Models\ThamGiaSk::create($request->all());
 
-        return response()->json($thamgiask,, 201);
+        return response()->json($thamgiask, 201);
     }
 
     /**
@@ -46,9 +46,9 @@ class ThamgiaskController extends Controller
      */
     public function show($id)
     {
-        $thamgiask, = Models\ThamGiaSk::findOrFail($id);
+        $thamgiask = Models\ThamGiaSk::findOrFail($id);
 
-        return $thamgiask,;
+        return $thamgiask;
     }
 
     /**
@@ -62,10 +62,10 @@ class ThamgiaskController extends Controller
     public function update(Request $request, $id)
     {
         
-        $thamgiask, = Models\ThamGiaSk::findOrFail($id);
-        $thamgiask,->update($request->all());
+        $thamgiask = Models\ThamGiaSk::findOrFail($id);
+        $thamgiask->update($request->all());
 
-        return response()->json($thamgiask,, 200);
+        return response()->json($thamgiask, 200);
     }
 
     /**

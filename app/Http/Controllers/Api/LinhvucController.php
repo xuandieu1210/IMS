@@ -17,9 +17,9 @@ class LinhvucController extends Controller
      */
     public function index(Request $request)
     {
-        $linhvuc, = Models\LinhVuc::latest()->paginate(25);
+        $linhvuc = Models\LinhVuc::latest()->paginate(25);
 
-        return $linhvuc,;
+        return $linhvuc;
     }
 
     /**
@@ -32,9 +32,9 @@ class LinhvucController extends Controller
     public function store(Request $request)
     {
         
-        $linhvuc, = Models\LinhVuc::create($request->all());
+        $linhvuc = Models\LinhVuc::create($request->all());
 
-        return response()->json($linhvuc,, 201);
+        return response()->json($linhvuc, 201);
     }
 
     /**
@@ -46,9 +46,9 @@ class LinhvucController extends Controller
      */
     public function show($id)
     {
-        $linhvuc, = Models\LinhVuc::findOrFail($id);
+        $linhvuc = Models\LinhVuc::findOrFail($id);
 
-        return $linhvuc,;
+        return $linhvuc;
     }
 
     /**
@@ -62,10 +62,10 @@ class LinhvucController extends Controller
     public function update(Request $request, $id)
     {
         
-        $linhvuc, = Models\LinhVuc::findOrFail($id);
-        $linhvuc,->update($request->all());
+        $linhvuc = Models\LinhVuc::findOrFail($id);
+        $linhvuc->update($request->all());
 
-        return response()->json($linhvuc,, 200);
+        return response()->json($linhvuc, 200);
     }
 
     /**
